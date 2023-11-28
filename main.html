@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html;  charset=utf-8">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="./assets/css/style.css" rel="stylesheet">
+	<script src="./assets/js/dynamicListener.min.js"></script>
+	<script src="./assets/js/jquery-3.4.1.min.js"></script>
+	<script src="./assets/js/select2.min.js"></script>
+	<script src="./assets/js/front.js"></script>
+	<script>
+		// 퍼블확인용
+		let theme = window.location.href.split('?')[1];
+		let theme_2 = theme !== undefined ? theme.split('#')[0] : null;
+
+		if (theme_2 === "dark") {
+			document.querySelector("html").classList.add("dark_theme");
+		}
+	</script>
+	<title></title>
+</head>
+
+<body class="front_body">
+	<div class="page_wrap main">
+		<header class="header_wrap">
+			<hgroup class="hgroup_pix">
+				<div class="hgroup_pix_inner">
+					<h1 class="toplogo"><a href="#" class="toplogo_link"><span class="hdtext">London card</span></a></h1>
+					<nav class="nav_list_wrap">
+						<ul class="nav_list">
+							<li><a href="#" class="nav_menu">USDT CARD</a>
+							<li><a href="#" class="nav_menu">EUR CARD</a>
+							<li><a href="#" class="nav_menu">WALLET</a>
+							<li><a href="#" class="nav_menu">MY PROFILE</a>
+							<li><a href="#" class="nav_menu">MY INVITATION</a>
+						</ul>
+					</nav>
+					<div class="hgroup_util_wrap">
+						<ul class="hgroup_util_list">
+							<li>
+								<div class="hgroup_util_toggle_item">
+									<a href="#" class="hgroup_util_item">
+										<i class="ico_nation"></i>
+										<span class="hgroup_util_text">ENG</span>
+									</a>
+									<div class="hgroup_util_option_list_wrap">
+										<ul class="hgroup_util_option_list">
+											<li><a href="javascript:;" class="hgroup_option_item">ENG</a></li>
+											<li><a href="javascript:;" class="hgroup_option_item">KOR</a></li>
+										</ul>
+									</div>
+								</div>
+							</li>
+						</ul>
+						<a href="#" class="btn_hgroup_menu">
+							<i class="menu_icon"></i>
+							<!-- <img src="./assets/images/ico_total_menu.png" alt=""> -->
+						</a>
+						<a href="#" class="btn_mb_menu">
+							<i class="menu_icon"></i>
+							<!-- <img src="./assets/images/ico_total_menu_mb.png" alt=""> -->
+						</a>
+					</div>
+				</div>
+			</hgroup>
+			<!-- mobile -->
+			<div class="mobile_mainmenu_zone">
+				<div class="mainmenu_dim"></div>
+				<div class="mobile_mainmenu_wrap">
+					<div class="mbutil_low">
+						<!-- 로그인 전 -->
+						<!-- <ul class="mbutil_hlist">
+                    <li><a href="#" class="mbutil">로그인</a></li>
+                    <li><a href="#" class="mbutil">회원가입</a></li>
+                </ul> -->
+						<!-- // 로그인 전 -->
+						<!-- 로그인 후 -->
+						<ul class="mbutil_hlist">
+							<li><a href="#" class="mbutil">LOGOUT</a></li>
+						</ul>
+						<!-- // 로그인 후 -->
+					</div>
+					<div class="mbmenu_low">
+						<div class="mbmenu_inwrap">
+							<ul class="mbmenu_vlist">
+								<li name="gnb_menu_01"><a href="#" class="mbmenu_one">USDT CARD</a></li>
+								<li name="gnb_menu_01"><a href="#" class="mbmenu_one">EUR CARD</a></li>
+								<li name="gnb_menu_01"><a href="#" class="mbmenu_one">WALLET</a></li>
+								<li name="gnb_menu_01"><a href="#" class="mbmenu_one">MY PROFILE</a></li>
+								<li name="gnb_menu_01"><a href="#" class="mbmenu_one">MY INVITATION</a></li>
+							</ul>
+						</div>
+					</div>
+					<a href="#" class="btn_mbmenuclose"><span class="hdtext">메인메뉴 닫기</span></a>
+				</div>
+			</div>
+			<!-- // mobile -->
+
+
+			<!-- pc menu -->
+			<div class="nav_depth_list_wrap">
+				<div class="nav_depth_list_inner">
+					<ul class="nav_depth_list">
+
+						<li>
+							<div class="nav_depth_one_row"><a href="#" class="nav_depth_one">USDT CARD</a></div>
+							<div class="nav_depth_two_row">
+								<ul class="nav_depth_two_list">
+									<li><a href="#" class="nav_depth_two">My Cards</a></li>
+									<li><a href="#" class="nav_depth_two">Identity Verification</a></li>
+									<li><a href="#" class="nav_depth_two">Application for charging</a></li>
+									<li><a href="#" class="nav_depth_two">Transaction History</a></li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<div class="nav_depth_one_row"><a href="#" class="nav_depth_one">EUR CARD</a></div>
+							<div class="nav_depth_two_row">
+								<ul class="nav_depth_two_list">
+									<li><a href="#" class="nav_depth_two">My Cards</a></li>
+									<li><a href="#" class="nav_depth_two">Identity Verification</a></li>
+									<li><a href="#" class="nav_depth_two">Application for charging</a></li>
+									<li><a href="#" class="nav_depth_two">Transaction History</a></li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<div class="nav_depth_one_row"><a href="#" class="nav_depth_one">WALLET</a></div>
+							<div class="nav_depth_two_row">
+								<ul class="nav_depth_two_list">
+									<li><a href="#" class="nav_depth_two">My Wallet</a></li>
+									<li><a href="#" class="nav_depth_two">Wallet charging</a></li>
+									<li><a href="#" class="nav_depth_two">Exchange</a></li>
+									<li><a href="#" class="nav_depth_two">Send a gift</a></li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<div class="nav_depth_one_row"><a href="#" class="nav_depth_one">MY PROFILE</a></div>
+							<div class="nav_depth_two_row">
+								<ul class="nav_depth_two_list">
+									<li><a href="#" class="nav_depth_two">Personal</a></li>
+									<li><a href="#" class="nav_depth_two">Security</a></li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<div class="nav_depth_one_row"><a href="#" class="nav_depth_one">MY INVITATION</a></div>
+							<div class="nav_depth_two_row">
+								<ul class="nav_depth_two_list">
+									<li><a href="#" class="nav_depth_two">Organization Chart</a></li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+					<ul class="nav_else_list">
+						<li><a href="#" class="nav_else_item">Application for paid members</a></li>
+						<li><a href="#" class="nav_else_item">Notice</a></li>
+						<li><a href="#" class="nav_else_item">Q&A</a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- // pc menu -->
+		</header>
+		<section class="middle_wrap">
+			<div class="middle_visual_wrap">
+				<div class="middle_visual_pixin">
+					<div class="middle_visual_copy_group">
+						<p class="middle_visual_main_copy">WELCOME TO LONDON CARD</p>
+						<p class="middle_visual_sub_copy">New platform business</p>
+					</div>
+					<div class="mb_obj"></div>
+				</div>
+			</div>
+			<div class="personal_flexbox_wrap">
+				<div class="personal_flexbox">
+					<div class="personal_flexbox_long_cols">
+						<div class="personal_profile_box">
+							<div class="personal_caption_cols">
+								<div class="personal_caption_thumnail">
+									<i class="ico_personal"></i>
+								</div>
+								<div class="personal_caption_spec">
+									<p class="personal_caption_main_spec">YOOJIN CHOI</p>
+									<p class="personal_caption_sub_spec">SECRET GARDEN725</p>
+								</div>
+							</div>
+							<div class="personal_summary_cols">
+								<div class="personal_summary_liquid">
+									<div class="ps_util_para">Last activity at 2023-08-30 10:50:03</div>
+									<div class="ps_data_item_wrap">
+										<div class="ps_data_item">
+											<i class="ico_ps ico_men"></i>
+											<span class="ps_summary_text">PAID MEMBER</span>
+										</div>
+										<div class="ps_data_item">
+											<i class="ico_ps ico_wallet"></i>
+											<span class="ps_summary_text">UNPAID FEE</span>
+											<span class="ps_value_inbox">
+												<span class="ps_value_text">7.00</span>
+												<span class="ps_unit_text">EUR</span>
+											</span>
+										</div>
+									</div>
+								</div>
+								<div class="personal_summary_pixed">
+									<a href="#" class="btn_more"><span class="btn_more_text">MORE</span></a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="personal_flexbox_short_cols">
+						<div class="ico_flexbox_row"><i class="ico_flexbox ico_men"></i></div>
+						<div class="text_flexbox_row">
+							<p class="text_flexbox_copy">APPLICATION <br>FOR PAID MEMBERS</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="board_linkage_box_wrap">
+				<div class="board_linkage_pixin">
+					<div class="board_linkage_title_row">
+						<p class="board_linkage_title">NOTICE</p>
+					</div>
+					<div class="board_linkage_box">
+						<div class="board_linkage_ico_cols">
+							<i class="ico_board"></i>
+						</div>
+						<div class="board_linkage_contents_cols">
+							<ul class="board_linkage_list">
+								<li>
+									<div class="board_linkage_group">
+										<i class="board_linkage_ico"></i>
+										<a href="#" class="board_linkage_item">Dear Customer, Please provide a clear photo of your passport with all the shown information on the front</a>
+										<span class="box_flag">new</span>
+									</div>
+									<div class="board_linkage_else">2024.07.20</div>
+								</li>
+								<li>
+									<div class="board_linkage_group">
+										<i class="board_linkage_ico"></i>
+										<a href="#" class="board_linkage_item">System Upgrade Announcement . Application for paid members</a>
+									</div>
+									<div class="board_linkage_else">2024.07.20</div>
+								</li>
+								<li>
+									<div class="board_linkage_group">
+										<i class="board_linkage_ico"></i>
+										<a href="#" class="board_linkage_item">Whenever you have questions or need support, submit your report about the issues.</a>
+									</div>
+									<div class="board_linkage_else">2024.07.20</div>
+								</li>
+							</ul>
+						</div>
+						<a href="#" class="btn_more_ico"><span class="hdtext">more</span></a>
+					</div>
+				</div>
+			</div>
+			<div class="wallet_flexbox_wrap">
+				<div class="wallet_flexbox_pixin">
+					<div class="wallet_flexbox_cols">
+						<div class="wallet_flexbox_title_row">
+							<p class="wallet_flexbox_title">USDT in your wallet</p>
+						</div>
+						<div class="wallet_flexbox_contents">
+							<div class="wallet_flexbox_total_row">
+								<div class="wft_ico_cols"><i class="ico_wallet"></i></div>
+								<div class="wft_value_cols">
+									<p class="wft_value">121,859.59</p>
+								</div>
+							</div>
+							<div class="wallet_flexbox_data_row">
+								<p class="wft_guide_para">Recent Activities</p>
+								<ul class="wft_data_list">
+									<li>
+										<div class="wft_summary_cols">
+											<p class="wft_summary_para">minsan1(minsan1) Card Insert Payback</p>
+											<div class="wft_flag_row">
+												<span class="text_flagbox">EUR</span>
+											</div>
+										</div>
+										<div class="wft_value_cols">
+											<div class="wft_value_group">
+												<i class="ico_wft"></i>
+												<span class="wft_value_text">2.41338918</span>
+											</div>
+											<p class="wft_value_else">2023-08-30 09:00:00</p>
+										</div>
+									</li>
+									<li>
+										<div class="wft_summary_cols">
+											<p class="wft_summary_para">minsan1(minsan1) Card Insert Payback</p>
+											<div class="wft_flag_row">
+												<span class="text_flagbox">EUR</span>
+											</div>
+										</div>
+										<div class="wft_value_cols">
+											<div class="wft_value_group">
+												<i class="ico_wft"></i>
+												<span class="wft_value_text">2.41338918</span>
+											</div>
+											<p class="wft_value_else">2023-08-30 09:00:00</p>
+										</div>
+									</li>
+									<li>
+										<div class="wft_summary_cols">
+											<p class="wft_summary_para">minsan1(minsan1) Card Insert Payback</p>
+											<div class="wft_flag_row">
+												<span class="text_flagbox">EUR</span>
+											</div>
+										</div>
+										<div class="wft_value_cols">
+											<div class="wft_value_group">
+												<i class="ico_wft"></i>
+												<span class="wft_value_text">2.41338918</span>
+											</div>
+											<p class="wft_value_else">2023-08-30 09:00:00</p>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<div class="wallet_flexbox_btn_row">
+								<a href="#" class="btn_link_box"><span class="btn_link_box_text">View Details</span></a>
+							</div>
+						</div>
+					</div>
+					<div class="wallet_flexbox_cols">
+						<div class="wallet_flexbox_title_row">
+							<p class="wallet_flexbox_title">EUR in your wallet</p>
+						</div>
+						<div class="wallet_flexbox_contents">
+							<div class="wallet_flexbox_total_row">
+								<div class="wft_ico_cols"><i class="ico_wallet"></i></div>
+								<div class="wft_value_cols">
+									<p class="wft_value type2">121,859.59</p>
+								</div>
+							</div>
+							<div class="wallet_flexbox_data_row">
+								<p class="wft_guide_para">Recent Activities</p>
+								<ul class="wft_data_list">
+									<li>
+										<div class="wft_summary_cols">
+											<p class="wft_summary_para">minsan1(minsan1) Card Insert Payback</p>
+											<div class="wft_flag_row">
+												<span class="text_flagbox">USDT</span>
+											</div>
+										</div>
+										<div class="wft_value_cols">
+											<div class="wft_value_group">
+												<i class="ico_wft"></i>
+												<span class="wft_value_text">2.41338918</span>
+											</div>
+											<p class="wft_value_else">2023-08-30 09:00:00</p>
+										</div>
+									</li>
+									<li>
+										<div class="wft_summary_cols">
+											<p class="wft_summary_para">minsan1(minsan1) Card Insert Payback</p>
+											<div class="wft_flag_row">
+												<span class="text_flagbox">USDT</span>
+											</div>
+										</div>
+										<div class="wft_value_cols">
+											<div class="wft_value_group type2">
+												<i class="ico_wft"></i>
+												<span class="wft_value_text">2.41338918</span>
+											</div>
+											<p class="wft_value_else">2023-08-30 09:00:00</p>
+										</div>
+									</li>
+									<li>
+										<div class="wft_summary_cols">
+											<p class="wft_summary_para">minsan1(minsan1) Card Insert Payback</p>
+											<div class="wft_flag_row">
+												<span class="text_flagbox">USDT</span>
+											</div>
+										</div>
+										<div class="wft_value_cols">
+											<div class="wft_value_group">
+												<i class="ico_wft"></i>
+												<span class="wft_value_text">2.41338918</span>
+											</div>
+											<p class="wft_value_else">2023-08-30 09:00:00</p>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<div class="wallet_flexbox_btn_row">
+								<a href="#" class="btn_link_box"><span class="btn_link_box_text">View Details</span></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="copy_guide_card_wrap">
+				<div class="copy_guide_card">
+					<div class="copy_guide_main_cols">
+						<div class="copy_guide_text_item">
+							<div class="cg_text_ico_group">
+								<i class="cg_text_ico"></i>
+							</div>
+							<div class="cg_text_group">
+								<p class="cg_text_main">We're here to help you</p>
+								<p class="cg_text_sub">
+									Whenever you have questions or need support, submit your report about the issues.<br>
+									Our support team will get back to you by email.
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="copy_guide_sub_cols">
+						<a href="#" class="btn_copy_box"><span class="btn_copy_box_text">Get Support Now</span></a>
+					</div>
+				</div>
+			</div>
+		</section>
+		<footer class="footer_wrap">
+			<div class="footer_pix">
+				<div class="footer_item_group">
+					<span class="footer_item"><span class="hdtext">LONDON CARD</span></span>
+					<p class="footer_item_para">COPYRIGHT (C) LONDON CARD. ALL RIGHTS RESERVED</p>
+				</div>
+			</div>
+			<a href="#" class="btn_bottom_go"></a>
+		</footer>
+	</div>
+</body>
+
+</html>
